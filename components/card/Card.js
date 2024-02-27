@@ -46,26 +46,28 @@ function Card({ openPage, name, description, imageSrc }) {
       </View>
 
       <Modal
-      style={{backgroundColor:"black",alignSelf:"center",maxHeight: 200}}
-        visible={modalVisible}
-        onBackdropPress={()=>{
-          setModalVisible(false)}
-        }
-        transparent
-        animationType="fade"
-        onRequestClose={() =>setModalVisible(false)}>
+style={{ justifyContent: 'center', alignItems: 'center'}}
+  visible={modalVisible}
+  onBackdropPress={()=>{
+    setModalVisible(false)}
+  }
+  transparent
+  animationType="fade"
+  onRequestClose={() =>setModalVisible(false)}>
 
-        <View style={{flex:1,elevation:10 }}>
-          <TouchableOpacity
-            onPress={() =>setModalVisible(false)}>
-            <Image
-              source={imageSrc}
-              style={{ height: 200, width: 200, borderRadius: 30 }}
-            />
-          </TouchableOpacity>
-        </View>
-      </Modal>
+  <View style={{elevation:8 , borderRadius: 30,maxHeight:200}}>
+    <TouchableOpacity
+      onPress={() =>setModalVisible(false)}>
+      <Image
+        source={imageSrc}
+        style={{ flex:1 ,borderRadius: 30,height: 200, width: 200  }}
+        resizeMode="cover"
+      />
+    </TouchableOpacity>
+  </View>
+</Modal>
     </View>
+
   );
 }
 
